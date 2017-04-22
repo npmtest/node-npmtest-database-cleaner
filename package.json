@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-database-cleaner",     "homepage": "https://github.com/npmtest/node-npmtest-database-cleaner",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-database-cleaner.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [database-cleaner (v1.2.0)](https://github.com/emerleite/node-database-cleaner#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-database-cleaner.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-database-cleaner) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-database-cleaner.svg)](https://travis-ci.org/npmtest/node-npmtest-database-cleaner)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-database-cleaner",
+    "keywords": [
+        "coverage",
+        "test",
+        "database-cleaner"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_database_cleaner.js",
+    "name": "npmtest-database-cleaner",
+    "nameAlias": "npmtest_database_cleaner",
+    "nameOriginal": "npmtest-database-cleaner",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-database-cleaner.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
